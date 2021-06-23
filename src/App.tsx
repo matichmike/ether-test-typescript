@@ -46,7 +46,6 @@ function App() {
       />}
       {!credentialsPage && <ResultsPage 
         setCredentialsPage={setCredentialsPage}
-        //fetchTokens={fetchTokens}
         tokensResponse={tokensResponse}
       />}
     </div>
