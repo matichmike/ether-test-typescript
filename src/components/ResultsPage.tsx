@@ -1,5 +1,11 @@
 import React from 'react';
-function ResultsPage({setCredentialsPage, tokensResponse}) {
+
+type Props = {
+  setCredentialsPage: (state: boolean) => void;
+  tokensResponse: any
+};
+
+const ResultsPage: React.FC<Props> = ({setCredentialsPage, tokensResponse}) => {
   return (
     <div className="card login-card col-12 col-lg-4 mt-2 hv-center">
       <label htmlFor="resultsOutput">

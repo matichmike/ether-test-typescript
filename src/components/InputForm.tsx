@@ -1,6 +1,12 @@
 import React, {useState} from "react";
 
-function InputForm({setCredentialsPage, setUserCredentials, fetchTokens}) {
+type Props = {
+  setCredentialsPage: (state: boolean) => void;
+  fetchTokens: () => void;
+  setUserCredentials: (state: any) => void;
+};
+
+const InputForm: React.FC<Props> = ({setCredentialsPage, setUserCredentials, fetchTokens}) => {
   const [state, setState] = useState({
     contract: "",
     address: ""
@@ -10,7 +16,7 @@ function InputForm({setCredentialsPage, setUserCredentials, fetchTokens}) {
     setState(prevState => ({
       ...prevState, [event.target.id]: event.target.value
     }));
-    setUserCredentials(prevState => ({
+    setUserCredentials((prevState: any) => ({
       ...prevState, [event.target.id]: event.target.value
     }));
   }
